@@ -13,4 +13,4 @@ Try to reach level 5 ;)
 
 ## Preview:
 
-Check the preview of the game here:
+Check the preview of the game here: https://bercik468.github.io/FurryGame/
