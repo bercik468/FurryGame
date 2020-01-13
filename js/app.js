@@ -135,15 +135,27 @@ class Game {
     switch (e.which) {
       case 37:
         this.furry.direction = "left";
+        const left = new Audio();
+        left.src = "../audio/left.mp3";
+        left.play();
         break;
       case 39:
         this.furry.direction = "right";
+        const right = new Audio();
+        right.src = "../audio/right.mp3";
+        right.play();
         break;
       case 38:
         this.furry.direction = "up";
+        const up = new Audio();
+        up.src = "../audio/up.mp3";
+        up.play();
         break;
       case 40:
         this.furry.direction = "down";
+        const down = new Audio();
+        down.src = "../audio/down.mp3";
+        down.play();
         break;
     }
   }
@@ -158,6 +170,9 @@ class Game {
       this.coin = new Coin();
       this.showCoin();
       this.levels();
+      const eat = new Audio();
+      eat.src = "../audio/eat.mp3";
+      eat.play();
     }
   }
   gameOver() {
@@ -172,7 +187,9 @@ class Game {
       document.querySelector("#board").style.display = "none";
       document.querySelector("#score").style.display = "none";
       document.querySelector("#over").style.display = "flex";
-      return;
+      const dead = new Audio();
+      dead.src = "../audio/dead.mp3";
+      dead.play();
     }
   }
   gameReload() {
