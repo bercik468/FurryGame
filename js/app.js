@@ -136,25 +136,25 @@ class Game {
       case 37:
         this.furry.direction = "left";
         const left = new Audio();
-        left.src = "../audio/left.mp3";
+        left.src = "./audio/left.mp3";
         left.play();
         break;
       case 39:
         this.furry.direction = "right";
         const right = new Audio();
-        right.src = "../audio/right.mp3";
+        right.src = "./audio/right.mp3";
         right.play();
         break;
       case 38:
         this.furry.direction = "up";
         const up = new Audio();
-        up.src = "../audio/up.mp3";
+        up.src = "./audio/up.mp3";
         up.play();
         break;
       case 40:
         this.furry.direction = "down";
         const down = new Audio();
-        down.src = "../audio/down.mp3";
+        down.src = "./audio/down.mp3";
         down.play();
         break;
     }
@@ -171,7 +171,7 @@ class Game {
       this.showCoin();
       this.levels();
       const eat = new Audio();
-      eat.src = "../audio/eat.mp3";
+      eat.src = "./audio/eat.mp3";
       eat.play();
     }
   }
@@ -188,7 +188,7 @@ class Game {
       document.querySelector("#score").style.display = "none";
       document.querySelector("#over").style.display = "flex";
       const dead = new Audio();
-      dead.src = "../audio/dead.mp3";
+      dead.src = "./audio/dead.mp3";
       dead.play();
     }
   }
