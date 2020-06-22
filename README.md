@@ -11,6 +11,10 @@ Try to reach level 5 ;)
 - JavaScript
 - Webpack
 
+## Screenshots:
+
+![Example screenshot](./images/screenshot1.png)
+
 ## Preview:
 
 Check the preview of the game here: https://bercik468.github.io/FurryGame/

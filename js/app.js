@@ -23,7 +23,7 @@ class Game {
     this.furry = new Furry();
     this.coin = new Coin();
     this.result = new Result();
-    this.index = function(x, y) {
+    this.index = function (x, y) {
       return x + y * 10;
     };
   }
@@ -34,6 +34,8 @@ class Game {
     this.board[this.index(this.coin.x, this.coin.y)].classList.add("coin");
   }
   startGame() {
+    this.showFurry();
+    this.showCoin();
     document.querySelector("#score").style.display = "block";
     document.querySelector("#board").style.display = "block";
     document.querySelector("#start").style.display = "none";
@@ -51,7 +53,7 @@ class Game {
       this.result.level++;
       document.querySelector("#score .level").innerText = this.result.level;
       document.querySelector("#over .level").innerText = this.result.level;
-      squares.forEach(square => {
+      squares.forEach((square) => {
         square.style.boxShadow = "0px 0px 5px 1px rgb(0, 4, 250)";
       });
     }
@@ -63,7 +65,7 @@ class Game {
       this.result.level++;
       document.querySelector("#score .level").innerText = this.result.level;
       document.querySelector("#over .level").innerText = this.result.level;
-      squares.forEach(square => {
+      squares.forEach((square) => {
         square.style.boxShadow = "0px 0px 5px 1px rgb(0, 204, 255)";
       });
     }
@@ -75,7 +77,7 @@ class Game {
       this.result.level++;
       document.querySelector("#score .level").innerText = this.result.level;
       document.querySelector("#over .level").innerText = this.result.level;
-      squares.forEach(square => {
+      squares.forEach((square) => {
         square.style.boxShadow = "0px 0px 5px 1px rgb(255, 5, 5)";
       });
     }
@@ -87,7 +89,7 @@ class Game {
       this.result.level++;
       document.querySelector("#score .level").innerText = this.result.level;
       document.querySelector("#over .level").innerText = this.result.level;
-      squares.forEach(square => {
+      squares.forEach((square) => {
         square.style.boxShadow = "0px 0px 5px 1px rgb(13, 255, 5)";
       });
     }
@@ -99,7 +101,7 @@ class Game {
       this.result.level++;
       document.querySelector("#score .level").innerText = this.result.level;
       document.querySelector("#over .level").innerText = this.result.level;
-      squares.forEach(square => {
+      squares.forEach((square) => {
         square.style.boxShadow = "0px 0px 5px 1px rgb(247, 5, 255)";
       });
     }
@@ -114,10 +116,11 @@ class Game {
     } else if (this.furry.direction === "down") {
       this.furry.y++;
     }
+
     this.gameOver();
     this.hideVisibleFurry();
-    this.showFurry();
     this.checkCoinCollision();
+    this.showFurry();
   }
   hideVisibleFurry() {
     if (
@@ -194,7 +197,7 @@ class Game {
   }
   gameReload() {
     const squares = document.querySelectorAll("#board div");
-    squares.forEach(square => {
+    squares.forEach((square) => {
       square.style.boxShadow = "1px 1px 5px 1px rgb(255, 188, 5)";
     });
     document.querySelector("#board").style.display = "block";
@@ -206,8 +209,6 @@ class Game {
     document.querySelector("#over .score").innerText = this.result.score;
     document.querySelector("#score .level").innerText = this.result.level;
     document.querySelector("#over .level").innerText = this.result.level;
-    this.showFurry();
-    this.showCoin();
     this.startGame();
   }
 }
@@ -215,17 +216,15 @@ class Game {
 const game = new Game();
 
 const btnStart = document.querySelector(".start");
-btnStart.addEventListener("click", function() {
-  game.showFurry();
-  game.showCoin();
+btnStart.addEventListener("click", function () {
   game.startGame();
 });
 
-document.addEventListener("keydown", function(e) {
+document.addEventListener("keydown", function (e) {
   game.turnFurry(e);
 });
 
 const btnEnd = document.querySelector(".end");
-btnEnd.addEventListener("click", function() {
+btnEnd.addEventListener("click", function () {
   game.gameReload();
 });
